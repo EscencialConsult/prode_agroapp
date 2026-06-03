@@ -163,7 +163,7 @@ export default function RankingPageAdmin() {
     <AppShell>
       <style>{CSS}</style>
 
-      <div style={{ maxWidth:1400, margin:'0 auto', padding:'2rem 1.5rem 3rem' }}>
+      <div style={{ maxWidth:1400, margin:'0 auto', padding:'clamp(1rem,3vw,2rem) clamp(.85rem,3vw,1.5rem) clamp(2rem,4vw,3rem)' }}>
 
         <div className="rk-in" style={{ marginBottom:'1.5rem' }}>
           <h1 style={{

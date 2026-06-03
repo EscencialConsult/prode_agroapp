@@ -544,7 +544,7 @@
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
               gap: '1.25rem',
             }}
           >
@@ -674,8 +674,8 @@
           </div>
         </div>
 
-        <div>
-          <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', minWidth: 360, borderCollapse: 'collapse', tableLayout: 'fixed' }}>
             <thead>
               <tr style={{ background: C.creamHi }}>
                 <th
@@ -945,7 +945,7 @@
           @keyframes skp{0%,100%{opacity:.7}50%{opacity:.3}}
         `}</style>
 
-        <div style={{ maxWidth:1400, margin:'0 auto', padding:'2rem 1.5rem 3rem' }}>
+        <div style={{ maxWidth:1400, margin:'0 auto', padding:'clamp(1rem,3vw,2rem) clamp(.85rem,3vw,1.5rem) clamp(2rem,4vw,3rem)' }}>
 
 <div className="din" style={{ marginBottom:'1.5rem' }}>
   <h1 style={{

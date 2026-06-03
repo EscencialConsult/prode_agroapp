@@ -88,7 +88,7 @@ export default function RankingPageUser() {
       <style>{CSS}</style>
 
       {/* ⚡ Dimensiones alineadas con FixturePage */}
-      <div style={{ maxWidth:1400, margin:'0 auto', padding:'2rem 1.5rem 3rem' }}>
+      <div style={{ maxWidth:1400, margin:'0 auto', padding:'clamp(1rem,3vw,2rem) clamp(.85rem,3vw,1.5rem) clamp(2rem,4vw,3rem)' }}>
 
         {/* Título página — RANKING navy + (subtítulo gris debajo) */}
         <div className="rk-in" style={{ marginBottom:'1.5rem' }}>
