@@ -74,27 +74,9 @@ export function fmtFechaLarga(iso) {
   })
 }
 
-/**
- * Convierte una fecha que viene del backend (formato ISO con Z)
- * interpretándola como hora Argentina, no UTC.
- * Backend guarda "2026-04-29T13:30:00.000Z" queriendo decir 13:30 Argentina.
- * Esta función lo convierte a un timestamp correcto.
- */
 function fechaArgentinaATimestamp(fechaISO) {
   if (!fechaISO) return null
-  const str = String(fechaISO).trim()
-  
-  // Si termina en Z, asumir que es hora Argentina (no UTC)
-  if (/Z$/.test(str)) {
-    const sinZ = str.replace(/Z$/, '')
-    const conOffset = `${sinZ}-03:00` // Argentina UTC-3
-    const date = new Date(conOffset)
-    if (isNaN(date.getTime())) return null
-    return date.getTime()
-  }
-  
-  // Si no tiene Z, parsearlo normalmente
-  const date = new Date(str)
+  const date = new Date(String(fechaISO).trim())
   if (isNaN(date.getTime())) return null
   return date.getTime()
 }
