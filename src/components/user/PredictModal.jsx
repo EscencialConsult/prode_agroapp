@@ -534,9 +534,9 @@ export default function PredictModal({ bet, onSubmit, onClose, loading }) {
                   </div>
 
                   <div className="grid grid-cols-[1fr_auto_1fr] items-center">
-                    <div className="flex items-center gap-2.5 p-3 bg-gradient-to-r from-slate-50 to-white border-r border-slate-200">
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 p-2 sm:p-3 bg-gradient-to-r from-slate-50 to-white border-r border-slate-200">
                       {match.bandera_local && (
-                        <img src={match.bandera_local} alt="" className="w-10 h-7 object-cover rounded shadow-sm flex-shrink-0" />
+                        <img src={match.bandera_local} alt="" className="w-7 h-5 sm:w-10 sm:h-7 object-cover rounded shadow-sm flex-shrink-0" />
                       )}
                       <div className="flex-1 min-w-0">
                         {match.codigo_local && (
@@ -544,13 +544,13 @@ export default function PredictModal({ bet, onSubmit, onClose, loading }) {
                             {match.codigo_local}
                           </div>
                         )}
-                        <div className="text-sm font-black text-slate-900 leading-tight truncate">
+                        <div className="text-xs sm:text-sm font-black text-slate-900 leading-tight truncate">
                           {match.equipo_local}
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-center gap-2 px-4 py-3 bg-slate-900">
+                    <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 py-2 sm:px-4 sm:py-3 bg-slate-900">
                       <input
                         type="text"
                         inputMode="numeric"
@@ -559,9 +559,9 @@ export default function PredictModal({ bet, onSubmit, onClose, loading }) {
                         onChange={e => updateScore(match.id, 'local', e.target.value)}
                         placeholder="—"
                         disabled={isDisabled}
-                        className="w-11 h-11 text-2xl text-center font-black bg-white text-slate-900 border-2 border-yellow-400 rounded-lg outline-none transition-all focus:border-yellow-300 focus:shadow-lg focus:shadow-yellow-500/30 focus:scale-105 disabled:bg-slate-200 disabled:text-slate-400 disabled:border-slate-300 disabled:cursor-not-allowed tabular-nums"
+                        className="w-9 h-9 sm:w-11 sm:h-11 text-lg sm:text-2xl text-center font-black bg-white text-slate-900 border-2 border-yellow-400 rounded-lg outline-none transition-all focus:border-yellow-300 focus:shadow-lg focus:shadow-yellow-500/30 focus:scale-105 disabled:bg-slate-200 disabled:text-slate-400 disabled:border-slate-300 disabled:cursor-not-allowed tabular-nums"
                       />
-                      <span className="text-2xl font-black text-yellow-400">:</span>
+                      <span className="text-lg sm:text-2xl font-black text-yellow-400">:</span>
                       <input
                         type="text"
                         inputMode="numeric"
@@ -570,23 +570,23 @@ export default function PredictModal({ bet, onSubmit, onClose, loading }) {
                         onChange={e => updateScore(match.id, 'visitante', e.target.value)}
                         placeholder="—"
                         disabled={isDisabled}
-                        className="w-11 h-11 text-2xl text-center font-black bg-white text-slate-900 border-2 border-yellow-400 rounded-lg outline-none transition-all focus:border-yellow-300 focus:shadow-lg focus:shadow-yellow-500/30 focus:scale-105 disabled:bg-slate-200 disabled:text-slate-400 disabled:border-slate-300 disabled:cursor-not-allowed tabular-nums"
+                        className="w-9 h-9 sm:w-11 sm:h-11 text-lg sm:text-2xl text-center font-black bg-white text-slate-900 border-2 border-yellow-400 rounded-lg outline-none transition-all focus:border-yellow-300 focus:shadow-lg focus:shadow-yellow-500/30 focus:scale-105 disabled:bg-slate-200 disabled:text-slate-400 disabled:border-slate-300 disabled:cursor-not-allowed tabular-nums"
                       />
                     </div>
 
-                    <div className="flex items-center gap-2.5 p-3 text-right bg-gradient-to-l from-slate-50 to-white border-l border-slate-200">
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 p-2 sm:p-3 text-right bg-gradient-to-l from-slate-50 to-white border-l border-slate-200">
                       <div className="flex-1 min-w-0">
                         {match.codigo_visitante && (
                           <div className="text-[9px] font-black tracking-wider text-yellow-600 uppercase mb-0.5">
                             {match.codigo_visitante}
                           </div>
                         )}
-                        <div className="text-sm font-black text-slate-900 leading-tight truncate">
+                        <div className="text-xs sm:text-sm font-black text-slate-900 leading-tight truncate">
                           {match.equipo_visitante}
                         </div>
                       </div>
                       {match.bandera_visitante && (
-                        <img src={match.bandera_visitante} alt="" className="w-10 h-7 object-cover rounded shadow-sm flex-shrink-0" />
+                        <img src={match.bandera_visitante} alt="" className="w-7 h-5 sm:w-10 sm:h-7 object-cover rounded shadow-sm flex-shrink-0" />
                       )}
                     </div>
                   </div>
