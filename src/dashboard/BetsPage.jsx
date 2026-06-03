@@ -61,7 +61,7 @@ function BetCard({bet,predsMap,onPredict}){
   const anyPred=bet.partidos?.some(p=>predsMap?.[p.id])
   const {user}=useAuth()
   const esJefe=user?.tipo_usuario==='jefe'
-  const canPredict=(open&&(bet.tipo!=='grupos'||(esJefe&&String(bet.areas_ids||'').split(',').map(x=>x.trim()).includes(String(user?.area_id)))))
+  const canPredict=(open&&!allDone&&(bet.tipo!=='grupos'||(esJefe&&String(bet.areas_ids||'').split(',').map(x=>x.trim()).includes(String(user?.area_id)))))
 
   return(
     <div style={{...CARD_BASE,borderRadius:18,padding:'1.4rem 1.5rem',border:`1px solid ${live?'rgba(224,50,82,.25)':open?'rgba(27,138,90,.18)':'#f0eadb'}`,transition:'transform .2s,box-shadow .2s'}}
