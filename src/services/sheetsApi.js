@@ -9,7 +9,7 @@
 
 // URL directa del deploy de Apps Script.
 // Si hacés un nuevo deploy, actualizá esta URL.
-const API_URL = 'https://script.google.com/macros/s/AKfycbxO0TK9P0YNqwR2QzoFsdoweY9N39oZbgkthsildwR_0bEJMPcGW03wLenkevHhMewdWA/exec'
+const API_URL = 'https://script.google.com/macros/s/AKfycbzUIuo28BI40wIqDvNH-yjFfTgtA61BrtdcQMXpDyC7jlohuK2k3kg7kfcLKzJxMZdQXg/exec'
 
 // ── Caché de cliente en memoria ────────────────────────────
 const CLIENT_CACHE = new Map()
@@ -269,6 +269,17 @@ const predicciones = {
     if (opciones.limit) params.limit = opciones.limit
     return get('predicciones.tabla', params, { useCache: false })
   },
+
+  // Ranking Global: suma puntos de todas las apuestas por usuario
+  tablaGlobal: (opciones = {}) => {
+    const params = {}
+    if (opciones.limit) params.limit = opciones.limit
+    return get('predicciones.tabla_global', params, { useCache: false })
+  },
+
+  // Apuestas de un usuario con sus puntos (para detalle en ranking global)
+  apuestasUsuario: (user_id) =>
+    get('predicciones.apuestas_usuario', { user_id }, { useCache: false }),
 }
 
 const grupos = {
